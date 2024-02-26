@@ -1,0 +1,15 @@
+<!-- balance.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balance</title>
+</head>
+<body>
+    <h1>Account Balance</h1>
+    <p>Your current balance is: {{ balance }}</p>
+    <a href="{% url 'deposit' %}">Deposit Money</a>
+    <a href="{% url 'withdraw' %}">Withdraw Money</a>
+</body>
+</html>

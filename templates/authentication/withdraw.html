@@ -1,0 +1,26 @@
+<!-- withdraw.html -->
+{% extends 'home_page/base.html' %}
+
+{% block head_title %}Banking System{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Withdraw</title>
+</head>
+<body>
+    <h1>Withdraw Money</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" step="0.01" required>
+        <button type="submit">Withdraw</button>
+    </form>
+</body>
+</html>
+{% endblock %}
