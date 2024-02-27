@@ -1,0 +1,19 @@
+<!-- kyc_document_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KYC Documents for Account Number: {{ account_number }}</title>
+</head>
+<body>
+    <h1>KYC Documents for Account Number: {{ kyc_document }}</h1>
+    <ul>
+        {% for kyc_document in kyc_documents %}
+            <li><a href="{{ kyc_document.document.url }}">{{ kyc_document.document.name }}</a></li>
+        {% empty %}
+            <li>No documents found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

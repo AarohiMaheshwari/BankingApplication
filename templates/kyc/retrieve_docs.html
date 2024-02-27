@@ -1,0 +1,18 @@
+<!-- retrieve_kyc_documents.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retrieve KYC Documents</title>
+</head>
+<body>
+    <h1>Retrieve KYC Documents</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="account_number">Enter Account Number:</label>
+        <input type="text" id="account_number" name="account_number">
+        <button type="submit">Retrieve Documents</button>
+    </form>
+</body>
+</html>

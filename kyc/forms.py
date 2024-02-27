@@ -6,4 +6,4 @@ from .models import KYCDocument
 class KYCDocumentForm(forms.ModelForm):
     class Meta:
         model = KYCDocument
-        fields = ['document']
+        fields = ['account_number', 'document']
