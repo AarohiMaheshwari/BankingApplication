@@ -21,7 +21,7 @@
                 <a href="deposit" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
                     Deposit
                 </a>
-                <a href="upload-kyc-document" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white">
+                <a href="{% url 'upload_kyc_document' user.id %}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white">
                     Upload Documents
                 </a>
                 <a href="apply-for-card" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">

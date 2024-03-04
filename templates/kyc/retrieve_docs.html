@@ -4,15 +4,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Retrieve KYC Documents</title>
+    <title>KYC Documents</title>
 </head>
 <body>
-    <h1>Retrieve KYC Documents</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="account_number">Enter Account Number:</label>
-        <input type="text" id="account_number" name="account_number">
-        <button type="submit">Retrieve Documents</button>
-    </form>
+    <h1>KYC Documents for User: {{ user.username }}</h1>
+    {% if kyc_documents %}
+        <ul>
+            {% for kyc_document in kyc_documents %}
+                <li><a href="{{ kyc_document.document.url }}" target="_blank">{{ kyc_document.document.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No documents found for this user.</p>
+    {% endif %}
 </body>
 </html>
