@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "authentication",
     "kyc",
     "cards",
+    "search",
     'crispy_forms',
     
 
