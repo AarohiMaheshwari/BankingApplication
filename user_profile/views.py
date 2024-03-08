@@ -27,3 +27,6 @@ def profile(request):
         form = ProfilePictureForm()
 
     return render(request, 'user_profile/profile.html', {'user': user, 'form': form, 'profile_picture': profile_picture})
+
+
+
