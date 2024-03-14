@@ -1,0 +1,17 @@
+<!-- search_accounts.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Accounts</title>
+</head>
+<body>
+    <h1>Search Accounts</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="bank_account_id">Bank Account ID:</label>
+        <input type="text" id="bank_account_id" name="bank_account_id">
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

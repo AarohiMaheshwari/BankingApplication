@@ -1,6 +1,6 @@
 <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-xl tracking-tight">Banking System</span>
+        <span class="font-semibold text-xl tracking-tight">Admin Panel</span>
     </div>
     <div class="block lg:hidden">
         <button class="flex items-center px-3 py-2 border rounded text-white border-white-400 hover:text-white hover:border-white">
@@ -26,17 +26,20 @@
                 </a>
                 <a href="apply-for-card" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
                     Apply for cards
-                </a>
-                
+                </a>               
                 <a href="withdraw" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white">
                     Withdraw
+                </a>             
+                <a href="search" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white">
+                    search
                 </a>
                 
-                
             </div>
-            <div class="flex items-center flex-shrink-0 text-white mr-6">
-                <span class="font-semibold text-xl tracking-tight">Hello {{request.user}}</span>
+            
+            <div class="flex items-center flex-shrink-0 text-white mr-6">                
+                <a href="profile" class="font-semibold text-xl tracking-tight">Hello {{request.user}}</a>
             </div>
+             
             <div>                
                 <a href="signout" class="inline-block font-medium text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">Logout</a>
             </div>
