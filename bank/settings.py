@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "authentication",
     "kyc",
     "cards",
+    "search",
+    "user_profile",
     'crispy_forms',
     
 
@@ -134,3 +136,5 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CRISPY_TEMPLATE_PACK="bootstrap4",
+
+LOGIN_REDIRECT_URL = 'profile'

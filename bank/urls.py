@@ -25,5 +25,7 @@ urlpatterns = [
     path("",include('authentication.urls')),
     path("",include('kyc.urls')),
     path("",include('cards.urls')),
+    path("",include('search.urls')),
+    path("",include('user_profile.urls')),
     path("", home_screen_view,name="home"),    
 ]
