@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{margin-top:20px;
     background-color:#f2f6fc;
     color:#69707a;
@@ -57,3 +58,68 @@ body{margin-top:20px;
         margin-left: 1rem;
         margin-right: 1rem;
     }
+=======
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.profile-content {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+}
+
+.profile-picture {
+    flex: 1;
+}
+
+.profile-details {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.profile-picture img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius:50%;
+}
+
+.profile-details h1 {
+    margin-top: 0;
+}
+
+.profile-details a {
+    display: block;
+    margin-top: 10px;
+}
+>>>>>>> origin/admin-main
