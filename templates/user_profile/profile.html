@@ -1,14 +1,38 @@
 <!-- profile.html -->
+{% extends 'home_page/base.html' %}
 
+{% block head_title %}Banking System{% endblock %}
+{% block content %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <h1>User Profile</h1>
-    <p>Username: {{ user.username }}</p>
-    <p>Email: {{ user.email }}</p>
-    <!-- Add more user information as needed -->
+    <div class="profile-content">
+        <div class="profile-picture">
+            {% if profile_picture %}
+            <img src="{{ profile_picture.picture.url }}" alt="Profile Picture">
+            {% else %}
+            <p>No profile picture uploaded.</p>
+            {% endif %}
+        </div>
+        <div class="profile-details">
+            <h1>User Profile</h1>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Upload Profile Picture</button>
+            </form>
+            <a href="">Edit Profile</a>
+        </div>
+    </div>
 </body>
 </html>
+
+
+{% endblock %}
