@@ -8,7 +8,9 @@ def search_accounts(request):
         bank_account_id = request.POST.get('bank_account_id')
         if bank_account_id:
             with connection.cursor() as cursor:
-                cursor.execute("SELECT * FROM auth_user WHERE id = %s", [bank_account_id])
+                query = f"select * from auth_user where id = {bank_account_id}"
+                # cursor.execute("SELECT * FROM auth_user WHERE id = %s", [bank_account_id])
+                cursor.execute(query)
                 users = cursor.fetchall()
             return render(request, 'search/search_results.html', {'users': users})
         else:
