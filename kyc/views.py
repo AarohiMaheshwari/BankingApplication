@@ -3,6 +3,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import KYCDocumentForm
+from django.utils.safestring import mark_safe
 
 @login_required
 def upload_kyc_document(request):
@@ -10,6 +11,7 @@ def upload_kyc_document(request):
         form = KYCDocumentForm(request.POST, request.FILES)
         if form.is_valid():
             document_name = form.cleaned_data['document_name']
+            safe_name = mark_safe(document_name)
             kyc_document = form.save(commit=False)
             kyc_document.user = request.user
             kyc_document.save()
