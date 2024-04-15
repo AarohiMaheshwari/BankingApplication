@@ -7,6 +7,7 @@ from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 from .models import BankAccount, Transaction
 from authentication import admin
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 def home(request):
     return render(request,"home_page/index.html")
@@ -43,7 +44,8 @@ def signup(request):
 
     else:
         return render(request, 'authentication/signup.html')    
-
+    
+@csrf_exempt
 def signin(request):
     if request.method == 'POST':
         username = request.POST['username']

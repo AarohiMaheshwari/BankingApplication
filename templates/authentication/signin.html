@@ -37,7 +37,7 @@
             <div class="form-group">
                 {% for message in messages %}
                 <div class="alert alert-danger" role="alert">
-                    {{message}}
+                    {{message| safe }}
                 </div>
                 {% endfor %}
             </div>

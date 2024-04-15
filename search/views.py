@@ -2,10 +2,11 @@
 
 from django.shortcuts import render
 from django.db import connection
+from django.utils.safestring import mark_safe
 
 def search_accounts(request):
     if request.method == 'POST':
-        bank_account_id = request.POST.get('bank_account_id')
+        bank_account_id = mark_safe(request.POST.get('bank_account_id'))
         if bank_account_id:
             with connection.cursor() as cursor:
                 query = f"select * from auth_user where id = {bank_account_id}"

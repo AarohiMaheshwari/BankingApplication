@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import http
 import os
 from pathlib import Path
 
@@ -61,6 +62,12 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+http 
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True #protect subdomains too 
+
+SECURE_SSL_REDIRECT = False #redirect http to https
+
 
 ROOT_URLCONF = "bank.urls"
 
