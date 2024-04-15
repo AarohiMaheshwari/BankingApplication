@@ -9,6 +9,7 @@ def upload_kyc_document(request):
     if request.method == 'POST':
         form = KYCDocumentForm(request.POST, request.FILES)
         if form.is_valid():
+            document_name = form.cleaned_data['document_name']
             kyc_document = form.save(commit=False)
             kyc_document.user = request.user
             kyc_document.save()
