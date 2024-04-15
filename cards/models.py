@@ -5,7 +5,12 @@ from django.contrib.auth.models import User
 from datetime import datetime, timedelta
 
 class CardType(models.Model):
-    name = models.CharField(max_length=100)
+    CARD_TYPES = [
+        ('master', 'MasterCard'),
+        ('credit', 'Credit Card'),
+        ('debit', 'Debit Card'),
+    ]
+    name = models.CharField(max_length=100, choices=CARD_TYPES,default='master')
 
     def __str__(self):
         return self.name
@@ -13,7 +18,7 @@ class CardType(models.Model):
 class CardApplication(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     card_type = models.ForeignKey(CardType, on_delete=models.CASCADE)
-    issue_date = models.DateField(default=datetime.now)
+    issue_date = models.DateField(default=datetime.now())
     expiry_date = models.DateField(default=datetime.now())
     is_approved = models.BooleanField(default=False)
 
