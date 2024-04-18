@@ -20,3 +20,4 @@ def apply_for_card(request):
 @login_required
 def card_application_success(request):
     return render(request, 'cards/card_application_success.html')
+

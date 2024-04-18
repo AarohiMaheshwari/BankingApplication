@@ -2,6 +2,8 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+
+from kyc.models import KYCDocument
 from .forms import KYCDocumentForm
 from django.utils.safestring import mark_safe
 
@@ -23,3 +25,9 @@ def upload_kyc_document(request):
 @login_required
 def kyc_document_success(request):
     return render(request, 'kyc/kyc_document_success.html')
+
+
+
+def admin_dashboard(request):
+    kyc_documents = KYCDocument.objects.all()
+    return render(request, 'kyc/admin_dashboard.html', {'kyc_documents': kyc_documents})

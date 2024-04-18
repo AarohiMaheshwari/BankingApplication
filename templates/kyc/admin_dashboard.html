@@ -1,0 +1,25 @@
+<!-- admin_dashboard.html -->
+
+<h1>Admin Dashboard</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Document Type</th>
+            <th>Document File</th>
+            <!-- Add more columns as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for document in kyc_documents %}
+            <tr>
+                <td>{{ document.id }}</td>
+                <td>{{ document.user.username }}</td>
+                <td>{{ document.document_name | safe}}</td>
+                <td><a href="{{ document.document_file.url }}">{{ document.document_file.name }}</a></td>
+                <!-- Add more columns as needed -->
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
